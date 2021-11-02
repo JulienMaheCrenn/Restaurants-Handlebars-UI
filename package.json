@@ -1,0 +1,26 @@
+{
+  "name": "restaurants-handlebars-ui",
+  "version": "1.0.0",
+  "description": "Creating the UI that's going to be used to interact with our RESTful API.",
+  "main": "config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JulienMaheCrenn/Restaurants-Handlebars-UI.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JulienMaheCrenn/Restaurants-Handlebars-UI/issues"
+  },
+  "homepage": "https://github.com/JulienMaheCrenn/Restaurants-Handlebars-UI#readme",
+  "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.5",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "handlebars": "^4.7.7"
+  }
+}

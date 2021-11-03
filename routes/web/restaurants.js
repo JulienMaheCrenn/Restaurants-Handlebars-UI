@@ -13,7 +13,17 @@ Router
         } catch (error) {
             return next(error);
         };
+    })
+    .get("/:id", async (req,res,next) => {
+        try {
+            const response = await fetch(`${url}/${req.params.id}`);
+            const restaurant = await response.json();
+            res.render("restaurant", {restaurant});
+        } catch (error) {
+            return next(error);
+        };
     });
 //
+
 
 module.exports = Router;

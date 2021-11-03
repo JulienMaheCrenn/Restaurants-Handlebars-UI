@@ -5,7 +5,7 @@ const restaurantRoutes = require("./routes/web/restaurants");
 const handlebars = require("./handlebars");
 
 app.engine("handlebars", handlebars);
-app.set('view-engine', "handlebars");
+app.set('view engine', "handlebars");
 
 app.use(express.static("public"));
 

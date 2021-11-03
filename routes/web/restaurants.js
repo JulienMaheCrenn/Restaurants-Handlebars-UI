@@ -22,6 +22,15 @@ Router
         } catch (error) {
             return next(error);
         };
+    })
+    .get("/new", async (req,res) => {
+        try {
+            const response = await fetch(`${url}/new`);
+            const newRestaurant = await response
+            res.render("newRestaurant", {newRestaurant});
+        } catch (error) {
+            return next(error);
+        };
     });
 //
 

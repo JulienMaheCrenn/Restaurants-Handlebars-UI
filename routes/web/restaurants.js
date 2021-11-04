@@ -14,6 +14,26 @@ Router
             return next(error);
         };
     })
+    .post("/", async (req,res, next) => {
+        console.log(req.body);
+        try {
+            await fetch(url, {
+             method: "post",
+             body: JSON.stringify(req.body),
+             headers: { "Content-Type": "application/json"},   
+            });
+            res.redirect("/restaurants");
+        } catch (error) {
+            return next(error);
+        }
+    })
+    .get("/new", async (req,res, next) => {
+        try {
+            res.render("newRestaurant");
+        } catch (error) {
+            return next(error);
+        };
+    })
     .get("/:id", async (req,res,next) => {
         try {
             const response = await fetch(`${url}/${req.params.id}`);
@@ -22,16 +42,8 @@ Router
         } catch (error) {
             return next(error);
         };
-    })
-    .get("/new", async (req,res) => {
-        try {
-            const response = await fetch(`${url}/new`);
-            const newRestaurant = await response
-            res.render("newRestaurant", {newRestaurant});
-        } catch (error) {
-            return next(error);
-        };
     });
+
 //
 
 

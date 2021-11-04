@@ -7,6 +7,8 @@ const handlebars = require("./handlebars");
 app.engine("handlebars", handlebars);
 app.set('view engine', "handlebars");
 
+
+
 app.use(express.static("public"));
 
 app.use(express.urlencoded({extended:true}));

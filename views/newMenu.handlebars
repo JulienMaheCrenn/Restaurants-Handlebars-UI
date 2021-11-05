@@ -1,0 +1,12 @@
+<h1>New menu form</h1>
+
+<form action="/restaurants/{{rest_id}}/menus" method= "POST">
+    <input type="hidden" name="restaurantId" value= "{{rest_id}}">
+    <div>
+        <label for="title">Title</label><br>
+        <input type="text" name="title" id="title" required>
+    </div>
+    <button type="submit" class="button--anchor">
+        Submit
+    </button>
+</form>

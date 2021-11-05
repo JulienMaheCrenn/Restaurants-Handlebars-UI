@@ -72,6 +72,34 @@ Router
             return next (error)
         };
     })
+    .post("/:id/menus", async (req,res,next) => {
+        try {
+            await fetch(`${url}/${req.params.id}/menus`, {
+                method: "post",
+                body: JSON.stringify(req.body),
+                headers: { "Content-Type": "application/json"},   
+               });
+            
+            res.redirect(`/restaurants/${req.params.id}/menus`)
+        } catch (error) {
+            return next(error);
+        };
+    })
+    .get("/:id/menus/new", async (req,res,next) => {
+        try {
+            const rest_id = req.params.id
+            res.render("newMenu", {rest_id} )
+        } catch (error) {
+            return next(error);
+        };
+    })
+    .get("/new", async (req,res, next) => {
+        try {
+            res.render("newRestaurant");
+        } catch (error) {
+            return next(error);
+        };
+    })
 
 //
 

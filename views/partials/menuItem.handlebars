@@ -1,0 +1,16 @@
+<div class='menuitem'>
+  <h3>{{this.name}}</h3>
+  <p>Price: {{this.price}}</p>
+  <div class='promo-blocks__actions'>
+    <a
+      href='/menuitems/{{this.id}}/edit'
+      data-id='{{this.id}}'
+      class='anchor--button'
+    >
+      Edit
+    </a>
+    <button type="button" data-id='{{this.id}}' onClick='deleteMenuItem(this)'>
+      Delete
+    </button>
+  </div>
+</div>

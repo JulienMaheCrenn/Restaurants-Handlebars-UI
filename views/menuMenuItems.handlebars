@@ -1,0 +1,28 @@
+<style>
+    nav {
+        background-color: rgb(179, 112, 241);
+        padding: 15px;
+        color: cornsilk;
+        font: bold;
+    }
+    nav>a {
+      padding: 15px;
+    }
+</style>
+<nav>
+    <a href="/restaurants/">Return To All Restaurants</a>
+    <a href="./menuitems/new">Create New Menu Item</a>
+</nav>
+  
+<h2>Menu Items</h2>
+
+  <div class="promo-blocks">
+    {{#if menuitems.length }}
+        {{#each menuitems }}
+            {{> menuItem this }}
+        {{/each}}
+    {{else}}
+        <p>No Menu Items left :(</p>
+    {{/if}}
+  </div>
+  

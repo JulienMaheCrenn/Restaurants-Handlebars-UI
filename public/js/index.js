@@ -69,3 +69,40 @@ async function deleteMenu(btn) {
         window.location.reload();
     }
 };
+
+async function deleteMenuItem(btn) {
+    const id = btn.getAttribute("data-id");
+    const url = `http://localhost:3001/api/menuitems/${id}`;
+    const response = await fetch(url, { method: "DELETE"});
+
+    if (response.ok) {
+        window.location.reload();
+    }
+};
+
+async function updateMenuItem(event) {
+
+    event.preventDefault();
+    const form = event.target;
+
+    const data = {
+        id: form.menuItemId.value,
+        name: form.name.value,
+        price: form.price.value,
+        MenuId: form.menuId.value
+    };
+
+    const url = `http://localhost:3001/api/menuitems/${data.id}`;
+
+    const response = await fetch(url, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body:  JSON.stringify(data),
+    });
+    
+    if (response.ok) {
+        window.location = `/menus/${data.MenuId}/menuitems`
+    }
+};

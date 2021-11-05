@@ -1,0 +1,22 @@
+<h1>Edit Menu Item</h1>
+
+<form id="updateMenuItemForm">
+    <input type="hidden" name="menuId" value= "{{menuitem.MenuId}}">
+    <input type="hidden" name="menuItemId" value= "{{menuitem.id}}">
+    <div>
+        <label for="name">Name</label><br>
+        <input type="text" name="name" id="name" value= "{{menuitem.name}}" required>
+    </div>
+    <div>
+        <label for="price">Price</label><br>
+        <input type="text" name="price" id="price" value= "{{menuitem.price}}" required>
+    </div>    
+    <button type="submit" class= "button--anchor">
+      Submit
+    </button>
+</form>
+
+<script>
+    const form = document.getElementById("updateMenuItemForm")
+    form.addEventListener("submit", updateMenuItem)
+</script>

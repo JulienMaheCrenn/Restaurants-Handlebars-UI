@@ -63,6 +63,15 @@ Router
             return next(error);
         };
     })
+    .get("/:id/menus", async (req,res,next) => {
+        try {
+            const response = await fetch(`${url}/${req.params.id}/menus`);
+            const menus = await response.json();
+            res.render("restaurantMenus", {menus});
+        } catch (error) {
+            return next (error)
+        };
+    })
 
 //
 

@@ -1,0 +1,12 @@
+  <h2>Menus</h2>
+
+  <div class="promo-blocks">
+    {{#if menus.length }}
+        {{#each menus }}
+            {{> menuInstance this }}
+        {{/each}}
+    {{else}}
+        <p>No Menus left :(</p>
+    {{/if}}
+  </div>
+  
